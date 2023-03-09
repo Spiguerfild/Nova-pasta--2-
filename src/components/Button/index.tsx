@@ -1,10 +1,12 @@
+import { MouseEventHandler } from 'react'
 import './ButtonStyle.css'
 type ButtonProps = {
     text:string,
-    type:"default"|"primary"
+    type:"default"|"primary",
+    onClick:MouseEventHandler
 }
 export function Button(props:ButtonProps){
     return(
-        <button className={`btn-${props.type}`}>{props.text}</button>
+        <button onClick={props.onClick} className={`btn-${props.type}`}>{props.text}</button>
     )
 }
